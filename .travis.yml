@@ -5,3 +5,5 @@ branches:
   only:
     - master
     - develop
+before_install:
+  - git submodule update --init --recursive

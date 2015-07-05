@@ -1,8 +1,10 @@
 require_relative '../spec_helper'
 
 describe 'motd::default' do
-  let(:chef_run) { ChefSpec::Runner.new.converge(described_recipe) }
-
+  let(:chef_run) { ChefSpec::SoloRunner.new.converge(described_recipe) }
+  before do
+    stub_data_bag_item('global-properties', 'company').and_return(name: 'Die')
+  end
   it 'should create a motd file with the company name' do
     allow_any_instance_of(Chef::Recipe)
       .to receive(:data_bag_item)

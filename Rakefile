@@ -38,10 +38,15 @@ end
 
 desc 'Fire up Vagrant'
 task :start do
-  `vagrant up`
+  sh "vagrant up"
 end
 
 desc 'Runs specs'
 task :chefspec do
   sh "bundle exec rspec cookbooks"
+end
+
+desc 'Food critic'
+task :foodcritic do
+  sh "foodcritic -I test/foodcritic/* -f any cookbooks"
 end
