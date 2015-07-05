@@ -33,10 +33,15 @@ end
 
 desc 'Build package'
 task :build do
-  puts 'nothing yet'
+  Rake::Task[:chefspec].execute
 end
 
 desc 'Fire up Vagrant'
 task :start do
   `vagrant up`
+end
+
+desc 'Runs specs'
+task :chefspec do
+  sh "bundle exec rspec cookbooks"
 end
