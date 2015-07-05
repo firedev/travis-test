@@ -50,6 +50,8 @@ GEM
     hashie (2.1.2)
     highline (1.7.2)
     ipaddress (0.8.0)
+    knife-spec (1.0.0)
+      chef
     libyajl2 (1.2.0)
     method_source (0.8.2)
     mime-types (2.6.1)
@@ -128,6 +130,7 @@ PLATFORMS
 DEPENDENCIES
   chef
   chefspec
+  knife-spec
   rake
 
 BUNDLED WITH
